@@ -225,14 +225,10 @@ class Main(QMainWindow):
         helpMenu.addAction(aboutAct)
         
         self.setMenuBar(menubar)
-        
-        menubar.setStyleSheet(r"QMenuBar {background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 lightgray, stop:1 darkgray); color: #00000}" + 
-                              "QMenuBar::item { spacing: 3px; padding: 1px 4px;background: transparent;border-radius: 1px;}" + 
-                              "QMenuBar::item:selected {background:#a8a8a8;}" + 
-                              "QMenuBar::item:pressed {background: #888888;}")
 
-       
-        
+        with open('menuStyle.css', 'r') as f:
+            menubar.setStyleSheet(f.read())
+
         win = MainUI()
         self.setCentralWidget(win)
         
@@ -240,12 +236,8 @@ class Main(QMainWindow):
         
         self.setMaximumSize(894  * self.w / 1920, 730  * self.h / 1080)
         
-        
-        
-        self.setStyleSheet("QWidget {background-color: #3D3D3D}" + 
-                           "QMenu {color: white}" +
-                           "QMenu::item::selected{background-color: darkgray; border-radius: 1px}" + 
-                           "QMenu::item::disabled{color: gray}") 
+        with open('generalStyle.css', 'r') as f:
+            self.setStyleSheet(f.read())
         
         self.setWindowTitle("Calculator")
         self.setWindowIcon(QIcon(os.path.join("Resources", "calc.png")))

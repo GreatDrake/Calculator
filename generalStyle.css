@@ -1,0 +1,13 @@
+QWidget {
+	background-color: #3D3D3D;
+}
+QMenu {
+	color: white;
+}
+QMenu::item::selected{
+	background-color: darkgray; 
+	border-radius: 1px;
+}
+QMenu::item::disabled{
+	color: gray;
+}
