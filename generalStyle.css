@@ -4,10 +4,10 @@ QWidget {
 QMenu {
 	color: white;
 }
-QMenu::item::selected{
+QMenu::item:selected{
 	background-color: darkgray; 
 	border-radius: 1px;
 }
-QMenu::item::disabled{
+QMenu::item:disabled{
 	color: gray;
 }

@@ -4,13 +4,13 @@ QMenuBar {
 } 
 QMenuBar::item { 
     spacing: 3px; 
-	padding: 1px 4px;
-	background: transparent;
-	border-radius: 1px;
+    padding: 1px 4px;
+    background: transparent;
+    border-radius: 1px;
 }
 QMenuBar::item:selected {
-	background:#a8a8a8;
+    background:#a8a8a8;
 }
 QMenuBar::item:pressed {
-	background: #888888;
+    background: #888888;
 }

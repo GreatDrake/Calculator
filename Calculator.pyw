@@ -256,13 +256,18 @@ class AboutWindow(QDialog):
         self.rec = self.rec.screenGeometry()
         self.w = self.rec.width()
         self.h = self.rec.height()
+
+        if sys.platform == 'linux':
+            font = QFont("Liberation Serif")
+        else:
+            font = QFont("Calibri")
         
         self.lbl = QLabel("Calculator\nVersion 0.9\n\n©Nikita Morozov 2016", self)
-        self.lbl.move(10 * self.w / 1920, 20 * self.h / 1080)
-        self.lbl.setFont(QFont("Calibri", 16))
+        self.lbl.move(10 * self.w / 1920, 15 * self.h / 1080)
+        font.setPixelSize(26)
+        self.lbl.setFont(font)
         self.lbl.setStyleSheet("color: lightgray")
     
-        
         self.setStyleSheet("QDialog {background-color: #3D3D3D; }")
         
         self.setFixedSize(300 * self.w / 1920, 190 * self.h / 1080)
